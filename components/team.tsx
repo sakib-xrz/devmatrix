@@ -1,10 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  ExternalLink,
+  Globe,
+  Dribbble,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+import SakibFormal from "@/public/sakib-formal.jpg";
+import NusratFormal from "@/public/nusrat-formal.jpg";
+import Link from "next/link";
 
 const teamMembers = [
   {
@@ -18,16 +29,19 @@ const teamMembers = [
         icon: <Linkedin className="h-5 w-5" />,
         label: "LinkedIn",
         color: "hover:text-blue-400",
+        link: "https://www.linkedin.com/in/sakibul-islam-0000000000/",
       },
       {
         icon: <Twitter className="h-5 w-5" />,
         label: "Twitter",
         color: "hover:text-sky-400",
+        link: "https://x.com/sakibul_islam",
       },
       {
         icon: <Github className="h-5 w-5" />,
         label: "GitHub",
         color: "hover:text-violet-400",
+        link: "https://github.com/sakib0808",
       },
     ],
   },
@@ -42,47 +56,53 @@ const teamMembers = [
         icon: <Linkedin className="h-5 w-5" />,
         label: "LinkedIn",
         color: "hover:text-blue-400",
+        link: "https://www.linkedin.com/in/sakib0808/",
       },
       {
         icon: <Twitter className="h-5 w-5" />,
         label: "Twitter",
         color: "hover:text-sky-400",
+        link: "https://x.com/sakibul_islam",
       },
       {
         icon: <Github className="h-5 w-5" />,
         label: "GitHub",
         color: "hover:text-violet-400",
+        link: "https://github.com/sakib0808",
       },
     ],
   },
   {
-    name: "Michael Rodriguez",
-    role: "Lead Developer",
-    image: "/placeholder.svg?height=400&width=400",
+    name: "Md Sakibul Islam",
+    role: "Senior Software Developer",
+    image: SakibFormal,
     bio: "Full-stack developer with a passion for clean, efficient code.",
     gradient: "from-amber-600 to-orange-600",
     socials: [
       {
-        icon: <Linkedin className="h-5 w-5" />,
-        label: "LinkedIn",
-        color: "hover:text-blue-400",
-      },
-      {
-        icon: <Twitter className="h-5 w-5" />,
-        label: "Twitter",
-        color: "hover:text-sky-400",
-      },
-      {
         icon: <Github className="h-5 w-5" />,
         label: "GitHub",
         color: "hover:text-violet-400",
+        link: "https://github.com/sakib-xrz",
+      },
+      {
+        icon: <Linkedin className="h-5 w-5" />,
+        label: "LinkedIn",
+        color: "hover:text-blue-400",
+        link: "https://www.linkedin.com/in/sakib0808/",
+      },
+      {
+        icon: <Globe className="h-5 w-5" />,
+        label: "Portfolio",
+        color: "hover:text-sky-400",
+        link: "https://sakib-dev.xyz/",
       },
     ],
   },
   {
-    name: "Emily Patel",
+    name: "Nusrat Jahan",
     role: "UX/UI Designer",
-    image: "/placeholder.svg?height=400&width=400",
+    image: NusratFormal,
     bio: "Creating beautiful, intuitive interfaces that users love.",
     gradient: "from-pink-600 to-rose-600",
     socials: [
@@ -90,16 +110,19 @@ const teamMembers = [
         icon: <Linkedin className="h-5 w-5" />,
         label: "LinkedIn",
         color: "hover:text-blue-400",
+        link: "https://www.linkedin.com/in/nusratjahan24/",
       },
       {
-        icon: <ExternalLink className="h-5 w-5" />,
+        icon: <Dribbble className="h-5 w-5" />,
         label: "Dribbble",
         color: "hover:text-pink-400",
+        link: "https://dribbble.com/Nusrat3060",
       },
       {
         icon: <ExternalLink className="h-5 w-5" />,
         label: "Behance",
         color: "hover:text-blue-500",
+        link: "https://www.behance.net/nusratjahan0",
       },
     ],
   },
@@ -156,29 +179,12 @@ export default function Team() {
               </div>
 
               <div className="aspect-square relative overflow-hidden">
-                {/* Image overlay gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 opacity-60 group-hover:opacity-80 transition-opacity duration-500 z-10`}
-                ></div>
-
-                {/* Hover overlay with gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t ${member.gradient} opacity-0 group-hover:opacity-40 transition-opacity duration-500 z-10 mix-blend-overlay`}
-                ></div>
-
                 <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
                   fill
                   className="object-cover transition-transform duration-700 "
                 />
-
-                {/* Hover text overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-                  <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white border border-white/20 text-sm">
-                    View Profile
-                  </span>
-                </div>
               </div>
 
               <CardContent className="p-6 relative">
@@ -207,20 +213,19 @@ export default function Team() {
                   {member.bio}
                 </p>
 
-                <div className="flex space-x-2 pt-2 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
+                <div className="flex space-x-3 pt-4 border-t border-white/10 group-hover:border-white/20 transition-colors duration-300">
                   {member.socials.map((social, socialIndex) => (
-                    <Button
+                    <Link
                       key={socialIndex}
-                      variant="ghost"
-                      size="icon"
+                      href={social.link}
                       className={cn(
-                        "rounded-full bg-white/5 hover:bg-white/15 text-white/70 transition-all duration-300",
+                        "block text-white/70 transition-all duration-300",
                         social.color
                       )}
+                      target="_blank"
                     >
                       {social.icon}
-                      <span className="sr-only">{social.label}</span>
-                    </Button>
+                    </Link>
                   ))}
                 </div>
               </CardContent>
