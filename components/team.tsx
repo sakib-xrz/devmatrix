@@ -4,15 +4,12 @@ import Image from "next/image";
 import {
   Github,
   Linkedin,
-  Twitter,
   ExternalLink,
   Globe,
   Dribbble,
   Facebook,
-  Instagram,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import SakibFormal from "@/public/sakib-formal.jpg";
@@ -22,7 +19,7 @@ import Link from "next/link";
 const teamMembers = [
   {
     name: "Mb Rubel",
-    role: "Full Stack Developer",
+    role: "Founder & CEO",
     image: "/images/team/rubel.jpeg",
     bio: "Building robust web applications with a focus on user experience.",
     gradient: "from-purple-600 to-indigo-600",
@@ -328,30 +325,24 @@ export default function Team() {
         </div>
 
         {/* Team stats */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-2">
-              10+
+              2+
             </div>
             <div className="text-white/80">Years Experience</div>
           </div>
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">
-              50+
+              10+
             </div>
             <div className="text-white/80">Projects Completed</div>
           </div>
           <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
             <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-2">
-              30+
+              10+
             </div>
             <div className="text-white/80">Happy Clients</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
-            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-500 mb-2">
-              5
-            </div>
-            <div className="text-white/80">Industry Awards</div>
           </div>
         </div>
       </div>
