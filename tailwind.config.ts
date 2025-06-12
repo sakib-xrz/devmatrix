@@ -18,6 +18,14 @@ const config = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      xs: "375px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -90,12 +98,61 @@ const config = {
             "background-position": "100% 50%",
           },
         },
+        "gradient-shift": {
+          "0%, 100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0px) rotate(0deg)",
+          },
+          "50%": {
+            transform: "translateY(-20px) rotate(5deg)",
+          },
+        },
+        "glow-pulse": {
+          "0%, 100%": {
+            "box-shadow": "0 0 20px rgba(139, 92, 246, 0.3)",
+          },
+          "50%": {
+            "box-shadow": "0 0 40px rgba(139, 92, 246, 0.6)",
+          },
+        },
+        "slide-in-blur": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(50px)",
+            filter: "blur(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+            filter: "blur(0)",
+          },
+        },
+        shimmer: {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         blob: "blob 7s infinite",
         text: "text-gradient 5s ease infinite",
+        "gradient-shift": "gradient-shift 6s ease infinite",
+        float: "float 6s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "slide-in-blur": "slide-in-blur 0.8s ease-out",
+        shimmer: "shimmer 2s ease-in-out infinite",
       },
     },
   },
