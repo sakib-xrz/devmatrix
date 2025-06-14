@@ -58,10 +58,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="flex-1 container-mobile mx-auto flex flex-col justify-center items-center text-center pt-16 xs:pt-20 md:pt-24 relative z-10">
+      <div className="flex-1 container-mobile mx-auto flex flex-col justify-center items-center text-center xs:pt-20 md:pt-24 relative z-10">
         <div className="max-w-5xl mx-auto glass-card hover:glass-card-hover transition-all duration-500 p-6 xs:p-8 md:p-12 rounded-2xl xs:rounded-3xl border border-white/10 hover:border-white/20">
           {/* Enhanced Badge */}
-          <div className="inline-flex items-center gap-2 mb-6 xs:mb-8 px-4 xs:px-6 py-2 xs:py-3 border border-white/20 rounded-full glass-card text-xs xs:text-sm font-medium text-white/90 animate-slide-blur hover:animate-glow-pulse cursor-default">
+          <div className="inline-flex items-center gap-2 mb-6 sm:mb-8 px-4 sm:px-6 py-2 sm:py-3 border border-white/20 rounded-full glass-card text-xs sm:text-sm font-medium text-white/90 animate-slide-blur hover:animate-glow-pulse cursor-default">
             <Sparkles className="w-3 xs:w-4 h-3 xs:h-4 text-purple-400" />
             <span>Innovative Software Solutions</span>
           </div>
@@ -88,7 +88,7 @@ export default function Hero() {
 
           {/* Enhanced CTA Buttons */}
           <div
-            className="flex flex-col xs:flex-row gap-4 xs:gap-6 justify-center animate-slide-blur"
+            className="flex flex-wrap gap-4 sm:gap-6 justify-center animate-slide-blur"
             style={{ animationDelay: "0.6s" }}
           >
             <Button
